@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/main.scss',
     '~/assets/css/main.css',
-    '@mdi/font/css/materialdesignicons.min.css',
   ],
   postcss: {
     plugins: {

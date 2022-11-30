@@ -1,6 +1,6 @@
 <script setup>
+  import { mdiFormatListBulletedSquare } from '@mdi/js';
   const showFilter = ref(false)
-
 </script>
 
 <template>
@@ -21,12 +21,8 @@
         icon
         @click="showFilter = !showFilter"
       >
-        <v-icon>mdi-format-list-bulleted-square</v-icon>
+        <v-icon>{{ mdiFormatListBulletedSquare }}</v-icon>
       </v-btn>
     </div>
-    
   </div>
-
 </template>
-
-
