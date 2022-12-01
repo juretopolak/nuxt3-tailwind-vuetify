@@ -1,27 +1,32 @@
 <script setup>
-  import { mdiFormatListBulletedSquare } from '@mdi/js';
+  import { mdiFormatListBulletedSquare, mdiWindowClose } from '@mdi/js';
+
   const showFilter = ref(false)
 </script>
 
 <template>
   <div class="">
     <div class="flex flex-row min-h-screen">
-      <div class="lg:block w-64 bg-violet-200" :class="{hidden: !showFilter}">
+      <div 
+        class="fixed lg:relative w-full lg:w-80 h-screen lg:block top-full p-2 transition-all bg-violet-200"
+        :class="{'top-20': showFilter}"
+      >
         Filters
       </div>
-      <div class="grow bg-violet-100">
+      <div class="grow p-2 bg-gra-100">
         <h1 class="text-3xl font-bold underline">
           Hello world!
         </h1>
       </div>
     </div>
-    <div class="fixed bottom-2 left-2 lg:hidden">
+    <div class="fixed bottom-2 right-2 lg:hidden">
       <v-btn
         variant="outlined"
         icon
         @click="showFilter = !showFilter"
       >
-        <v-icon>{{ mdiFormatListBulletedSquare }}</v-icon>
+        <v-icon v-if="showFilter">{{ mdiWindowClose}}</v-icon>
+        <v-icon v-else>{{ mdiFormatListBulletedSquare }}</v-icon>
       </v-btn>
     </div>
   </div>
