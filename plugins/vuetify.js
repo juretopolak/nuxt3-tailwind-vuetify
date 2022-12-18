@@ -2,6 +2,7 @@
 import { createVuetify } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import { md3 } from 'vuetify/blueprints'
+import colors from 'tailwindcss/colors'
 
 export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({
@@ -11,6 +12,17 @@ export default defineNuxtPlugin((nuxtApp) => {
       aliases,
       sets: {
         mdi
+      }
+    },
+    theme: {
+      defaultTheme: 'light',
+      themes: {
+        light: {
+          colors: {
+            test1: colors.yellow[300],
+            test2: '#2196F3'
+          }
+        }
       }
     }
   })

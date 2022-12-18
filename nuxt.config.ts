@@ -1,5 +1,4 @@
 import vuetify from 'vite-plugin-vuetify'
-// import eslintPlugin from 'vite-plugin-eslint';
 
 export default defineNuxtConfig({
   css: [
