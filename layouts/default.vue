@@ -1,51 +1,58 @@
-<!-- eslint-disable vue/no-v-text-v-html-on-component -->
-<script>
-import { mdiFormatListBulletedSquare, mdiWindowClose } from '@mdi/js'
+<script setup>
+import { mdiChevronLeft, mdiHome } from '@mdi/js'
+import { useTheme } from 'vuetify'
 
-export default {
-  data: () => ({
-    items: [
-      {
-        text: 'Real-Time',
-        icon: mdiFormatListBulletedSquare,
-        to: '/'
-      },
-      {
-        text: 'Audience',
-        icon: mdiWindowClose,
-        to: '/test'
-      }
-    ]
-  })
-}
+const theme = useTheme()
+const drawer = ref(true)
+const rail = ref(false)
+
+const toggleTheme = computed({
+  get () {
+    return theme.global.current.value.dark
+  },
+  set () {
+    theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+  }
+})
 </script>
+
 <template>
   <v-layout>
-    <v-app-bar color="secondary">
-      app bar
+    <v-app-bar clipped-left app color="test2">
+      <v-btn
+        icon
+        variant="flat"
+        color=""
+        density="comfortable"
+        @click="rail = !rail"
+      >
+        <v-icon>
+          {{ mdiChevronLeft }}
+        </v-icon>
+      </v-btn>
+      <div class="pl-6 text-2xl">
+        App Layout
+      </div>
+      <div class="grow" />
+      <div class="m-2">
+        <v-switch
+          v-model="toggleTheme"
+          hide-details
+        />
+      </div>
     </v-app-bar>
-    <v-navigation-drawer color="" permanent>
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :value="item"
-          :to="item.to"
-          active-color=""
-          variant=""
-          router
-          exact
-        >
-          <template #prepend>
-            <v-icon :icon="item.icon" />
-          </template>
-
-          <v-list-item-title v-text="item.text" />
-        </v-list-item>
-      </v-list>
+    <v-navigation-drawer
+      v-model="drawer"
+      :rail="rail"
+      color=""
+      permanent
+    >
+      <MainMenu />
     </v-navigation-drawer>
     <v-main>
-      <slot />
+      <div class="p-4 pt-1">
+        <slot />
+      </div>
     </v-main>
   </v-layout>
 </template>
