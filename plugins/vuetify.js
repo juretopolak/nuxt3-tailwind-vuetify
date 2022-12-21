@@ -15,12 +15,21 @@ export default defineNuxtPlugin((nuxtApp) => {
       }
     },
     theme: {
+      dark: true,
       defaultTheme: 'light',
       themes: {
         light: {
+          dark: false,
           colors: {
             test1: colors.yellow[300],
             test2: '#2196F3'
+          }
+        },
+        dark: {
+          dark: true,
+          colors: {
+            test1: '#2196F3',
+            test2: colors.yellow[300]
           }
         }
       }
@@ -28,4 +37,5 @@ export default defineNuxtPlugin((nuxtApp) => {
   })
 
   nuxtApp.vueApp.use(vuetify)
+  nuxtApp.provide('vuetify', vuetify)
 })
