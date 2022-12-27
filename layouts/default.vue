@@ -24,6 +24,7 @@ const toggleTheme = computed({
         variant="flat"
         color=""
         density="comfortable"
+        :class="{'rotate-180': rail}"
         @click="rail = !rail"
       >
         <v-icon>
