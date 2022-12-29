@@ -19,7 +19,16 @@ export default defineNuxtConfig({
       'process.env.DEBUG': false
     }
   },
+  imports: {
+    dirs: ['stores']
+  },
   modules: [
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: ['defineStore', 'acceptHMRUpdate']
+      }
+    ],
     // eslint-disable-next-line require-await
     async (options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', config => config!.plugins!.push(

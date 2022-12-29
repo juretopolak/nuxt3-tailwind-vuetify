@@ -16,7 +16,7 @@ const mainMenu = reactive([
 ])
 </script>
 <template>
-  <v-list>
+  <v-list density="compact" nav>
     <v-list-item
       v-for="(item, i) in mainMenu"
       :key="i"

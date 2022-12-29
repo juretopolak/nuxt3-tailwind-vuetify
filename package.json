@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@mdi/js": "^7.0.96",
+    "@pinia/nuxt": "^0.4.6",
+    "pinia": "^2.0.28",
     "sass": "^1.56.1",
     "vite-plugin-vuetify": "^1.0.0",
     "vuetify": "^3.0.2"
