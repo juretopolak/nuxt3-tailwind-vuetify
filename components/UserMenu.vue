@@ -12,7 +12,7 @@ const items = reactive([
       <v-btn
         v-bind="props"
         icon
-        variant="flat"
+        variant="tonal"
         color=""
         density="comfortable"
       >
@@ -21,7 +21,7 @@ const items = reactive([
         </v-icon>
       </v-btn>
     </template>
-    <v-list>
+    <v-list class="mt-2">
       <v-list-item
         v-for="(item, index) in items"
         :key="index"
