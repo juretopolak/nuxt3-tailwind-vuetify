@@ -6,7 +6,11 @@ export const useDrawerStore = defineStore('DrawerStore', {
     }
   },
   getters: {},
-  actions: {}
+  actions: {
+    toggleRail () {
+      this.rail = !this.rail
+    }
+  }
 })
 
 if (import.meta.hot) {

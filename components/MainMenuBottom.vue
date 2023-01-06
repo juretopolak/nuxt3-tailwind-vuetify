@@ -29,7 +29,7 @@ const toggleTheme = () => {
     <v-list-item
       :active="false"
       value="theme"
-      @click="drawerStore.rail = !drawerStore.rail"
+      @click="drawerStore.toggleRail"
     >
       <template #prepend>
         <v-icon :icon="mdiLockOpen" />
