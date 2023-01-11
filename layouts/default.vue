@@ -3,7 +3,7 @@ const drawerStore = useDrawerStore()
 </script>
 
 <template>
-  <v-layout>
+  <v-app>
     <v-app-bar clipped-left app color="test2">
       <div class="pl-4 text-2xl">
         App Layout
@@ -32,5 +32,5 @@ const drawerStore = useDrawerStore()
         <slot />
       </div>
     </v-main>
-  </v-layout>
+  </v-app>
 </template>
