@@ -23,7 +23,6 @@ const mainMenu = reactive([
       :value="item"
       :to="item.to"
       active-color=""
-      variant=""
       router
       exact
     >
