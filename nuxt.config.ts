@@ -29,11 +29,19 @@ export default defineNuxtConfig({
         autoImports: ['defineStore', 'acceptHMRUpdate']
       }
     ],
+    '@nuxtjs/apollo',
     // eslint-disable-next-line require-await
     async (options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', config => config!.plugins!.push(
         vuetify()
       ) as any)
     }
-  ]
+  ],
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: 'http://localhost:4000'
+      }
+    }
+  }
 })
