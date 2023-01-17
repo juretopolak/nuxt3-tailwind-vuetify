@@ -1,23 +1,7 @@
 <script lang="ts" setup>
-import { graphql } from '@/generated'
+import { graphql } from '@/gql'
 
-// const query = gql`
-//   query Posts {
-//     posts {
-//       id
-//       title
-//       published
-//       author {
-//         id
-//         email
-//         role
-//       }
-//     }
-//   }
-// `
-// const { data } = await useAsyncQuery(query)
-
-const PostsQuery = graphql(`
+const { result } = useQuery(graphql(`
   query Posts {
     posts {
       id
@@ -25,19 +9,20 @@ const PostsQuery = graphql(`
       published
       author {
         id
+        name
         email
         role
       }
     }
   }
-`)
+`))
 
-const { result } = useQuery(PostsQuery)
+const posts = computed(() => result.value?.posts)
 
 </script>
 <template>
   <div>
-    <div v-for="post of data.posts" :key="post.id">
+    <div v-for="post of posts" :key="post.id">
       <div>{{ post.id }}</div>
       <div>{{ post.title }}</div>
       <div>{{ post.author.email }}</div>
