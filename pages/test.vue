@@ -22,7 +22,10 @@ const posts = computed(() => result.value?.posts)
 </script>
 <template>
   <div>
-    <div v-for="post of posts" :key="post.id">
+    <div
+      v-for="post of posts"
+      :key="post.id"
+    >
       <div>{{ post.id }}</div>
       <div>{{ post.title }}</div>
       <div>{{ post.author.email }}</div>
