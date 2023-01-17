@@ -1,3 +1,4 @@
+
 export const useDrawerStore = defineStore('DrawerStore', {
   state: () => {
     return {
@@ -10,7 +11,8 @@ export const useDrawerStore = defineStore('DrawerStore', {
     toggleRail () {
       this.rail = !this.rail
     }
-  }
+  },
+  persist: true
 })
 
 if (import.meta.hot) {

@@ -29,6 +29,7 @@ export default defineNuxtConfig({
         autoImports: ['defineStore', 'acceptHMRUpdate']
       }
     ],
+    '@pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/apollo',
     // eslint-disable-next-line require-await
     async (options, nuxt) => {

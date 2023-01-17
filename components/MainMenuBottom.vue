@@ -1,14 +1,9 @@
 <!-- eslint-disable vue/no-v-text-v-html-on-component -->
-<script setup>
+<script type="ts" setup>
 import { mdiThemeLightDark, mdiLockOpen } from '@mdi/js'
-import { useTheme } from 'vuetify'
 
 const drawerStore = useDrawerStore()
-const theme = useTheme()
-
-const toggleTheme = () => {
-  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
-}
+const themeStore = useThemeStore()
 
 </script>
 <template>
@@ -16,7 +11,7 @@ const toggleTheme = () => {
     <v-list-item
       :active="false"
       value="theme"
-      @click="toggleTheme"
+      @click="themeStore.toggleTheme"
     >
       <template #prepend>
         <v-icon :icon="mdiThemeLightDark" />

@@ -1,9 +1,10 @@
 <script setup lang="ts">
+const themeStore = useThemeStore()
 const drawerStore = useDrawerStore()
 </script>
 
 <template>
-  <v-app>
+  <v-app :theme="themeStore.theme">
     <v-app-bar clipped-left app color="test2">
       <div class="pl-4 text-2xl">
         App Layout
