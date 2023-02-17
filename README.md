@@ -1,7 +1,3 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
 ## Setup
 
 Make sure to install the dependencies:
@@ -9,12 +5,6 @@ Make sure to install the dependencies:
 ```bash
 # yarn
 yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
 ## Development Server
@@ -22,21 +12,16 @@ pnpm install --shamefully-hoist
 Start the development server on http://localhost:3000
 
 ```bash
-npm run dev
+npx nuxt dev
 ```
 
-## Production
+## Error
 
-Build the application for production:
+Updating Nuxt 3.0.0 to 3.1.2 is causing error in the project:
 
 ```bash
-npm run build
+✘ [ERROR] No loader is configured for ".node" files: node_modules/fsevents/fsevents.node
+
+    node_modules/fsevents/fsevents.js:13:23:
+      13 │ const Native = require("./fsevents.node");
 ```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
