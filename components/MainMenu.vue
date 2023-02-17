@@ -1,12 +1,17 @@
 <!-- eslint-disable vue/no-v-text-v-html-on-component -->
 <script setup>
-import { mdiHome, mdiAlphaTBox } from '@mdi/js'
+import { mdiHome, mdiAlphaTBox, mdiRocketLaunch } from '@mdi/js'
 
 const mainMenu = reactive([
   {
     text: 'Home',
     icon: mdiHome,
     to: '/'
+  },
+  {
+    text: 'Rockets',
+    icon: mdiRocketLaunch,
+    to: '/rockets'
   },
   {
     text: 'Test',

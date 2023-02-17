@@ -2,16 +2,16 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "concurrently \"nuxt dev\" \"yarn codegen --watch\"",
+    "dev": "concurrently \"nuxt dev\" \"yarn codegen\"",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "codegen": "graphql-codegen"
+    "codegen": "graphql-codegen --require dotenv/config --config codegen.ts --watch"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.16.4",
-    "@graphql-codegen/client-preset": "^1.2.6",
+    "@graphql-codegen/cli": "^3.0.0",
+    "@graphql-codegen/client-preset": "^2.0.0",
     "@nuxtjs/apollo": "^5.0.0-alpha.5",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
@@ -25,6 +25,7 @@
   "dependencies": {
     "@mdi/js": "^7.0.96",
     "@pinia/nuxt": "^0.4.6",
+    "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
     "pinia": "^2.0.28",
     "sass": "^1.57.1",

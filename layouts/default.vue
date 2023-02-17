@@ -6,13 +6,13 @@ const drawerStore = useDrawerStore()
 <template>
   <v-app :theme="themeStore.theme">
     <v-app-bar clipped-left app color="test2">
-      <div class="pl-4 text-2xl">
-        App Layout
-      </div>
-      <div class="grow" />
-      <div class="m-2">
+      <template #prepend>
+        <v-app-bar-nav-icon />
+      </template>
+      <v-app-bar-title>App Layout</v-app-bar-title>
+      <template #append>
         <UserMenu />
-      </div>
+      </template>
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawerStore.drawer"
@@ -21,15 +21,12 @@ const drawerStore = useDrawerStore()
       color=""
       permanent
     >
-      <div class="flex flex-col min-h-full">
-        <MainMenu />
-        <div class="flex-1" />
-        <v-divider />
-        <MainMenuBottom />
-      </div>
+      <MainMenu />
+      <v-divider />
+      <MainMenuBottom />
     </v-navigation-drawer>
     <v-main>
-      <div class="p-4 pt-1">
+      <div class="pa-4">
         <slot />
       </div>
     </v-main>
