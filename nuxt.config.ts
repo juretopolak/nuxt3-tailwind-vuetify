@@ -2,15 +2,9 @@ import vuetify from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   css: [
-    '~/assets/css/main.scss',
-    '~/assets/css/main.css'
+    'vuetify/styles',
+    '@/assets/css/main.scss'
   ],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
-    }
-  },
   build: {
     transpile: ['vuetify']
   },
